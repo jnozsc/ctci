@@ -12,8 +12,7 @@ using namespace std;
 
 bool isUnique(string s);
 
-int main(int argc, const char * argv[])
-{
+int main(int argc, const char* argv[]) {
 
     // insert code here...
     std::cout << "Hello, World!\n";
@@ -24,15 +23,15 @@ int main(int argc, const char * argv[])
     return 0;
 }
 
-bool isUnique(string s){
-    if (s.length()>256) return false;
-    map<char,bool> mymap;
-    for (int i=0; i<256; i++) {
-        mymap[i]=false;
+bool isUnique(string s) {
+    if (s.length() > 256) return false;
+    map<char, bool> mymap;
+    for (int i = 0; i < 256; i++) {
+        mymap[i] = false;
     }
-    for(int j=0;j<s.length();j++){
-        if (mymap[s[j]]==false){
-            mymap[s[j]]=true;
+    for (int j = 0; j < s.length(); j++) {
+        if (mymap[s[j]] == false) {
+            mymap[s[j]] = true;
         } else {
             return false;
         }
