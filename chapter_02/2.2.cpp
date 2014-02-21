@@ -20,12 +20,12 @@ LinkedListNode* nthToLast(LinkedListNode* head, int k);
 
 int main(int argc, const char* argv[]) {
     // insert code here...
-    LinkedListNode* n1 = new LinkedListNode ;
-    LinkedListNode* n2 = new LinkedListNode   ;
-    LinkedListNode* n3  = new LinkedListNode  ;
-    LinkedListNode* n4 = new LinkedListNode   ;
-    LinkedListNode* n5  = new LinkedListNode  ;
-    LinkedListNode* n6  = new LinkedListNode  ;
+    LinkedListNode* n1 = new LinkedListNode;
+    LinkedListNode* n2 = new LinkedListNode;
+    LinkedListNode* n3 = new LinkedListNode;
+    LinkedListNode* n4 = new LinkedListNode;
+    LinkedListNode* n5 = new LinkedListNode;
+    LinkedListNode* n6 = new LinkedListNode;
     n1->val = 1;
     n2->val = 2;
     n3->val = 3;
