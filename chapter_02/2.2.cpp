@@ -16,7 +16,7 @@ struct LinkedListNode {
     struct LinkedListNode* next;
 };
 
-void deleteDups(LinkedListNode* n);
+LinkedListNode* nthToLast(LinkedListNode* head, int k);
 
 int main(int argc, const char* argv[]) {
     // insert code here...
@@ -27,30 +27,40 @@ int main(int argc, const char* argv[]) {
     LinkedListNode* n5  = new LinkedListNode  ;
     LinkedListNode* n6  = new LinkedListNode  ;
     n1->val = 1;
-    n2->val = 1;
-    n3->val = 1;
-    n4->val = 2;
-    n5->val = 1;
-    n6->val = 1;
+    n2->val = 2;
+    n3->val = 3;
+    n4->val = 4;
+    n5->val = 5;
+    n6->val = 6;
     n1->next = n2;
     n2->next = n3;
     n3->next = n4;
     n4->next = n5;
     n5->next = n6;
-    deleteDups(n1);
+    LinkedListNode* n7 = nthToLast(n1, 5);
+    cout << n7->val << endl; // 2
     return 0;
 }
 
-void deleteDups(LinkedListNode* n) {
-    set<int> myset;
-    LinkedListNode* previous = NULL;
-    while (n != NULL) {
-        if (myset.find(n->val) != myset.end()) {
-            previous->next = n->next;
-        } else {
-            myset.insert(n->val);
-            previous = n;
-        }
-        n = n->next;
+LinkedListNode* nthToLast(LinkedListNode* head, int k) {
+    if (k <= 0) {
+        return NULL;
     }
+    LinkedListNode* p1 = head;
+    LinkedListNode* p2 = head;
+    for (int i = 0; i < k - 1; i++) {
+        if (p2 != NULL) {
+            p2 = p2->next;
+        } else {
+            return NULL;
+        }
+    }
+    if (p2 == NULL) {
+        return NULL;
+    }
+    while (p2->next) {
+        p1 = p1->next;
+        p2 = p2->next;
+    }
+    return p1;
 }
