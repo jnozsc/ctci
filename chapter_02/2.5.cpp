@@ -48,7 +48,7 @@ LinkedListNode* addLists(LinkedListNode* l1, LinkedListNode* l2) {
     result->next = tmp;
     int digit;
     int carry = false;
-    while (l1 && l2) {
+    while (l1 || l2) {
         digit = 0;
         if (l1) {
             digit += l1->val;
