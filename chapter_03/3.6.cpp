@@ -5,7 +5,7 @@ class MyStack {
     stack<int> stack_first;
     stack<int> stack_second;
 
-public:
+  public:
     MyStack() {
         stack<int> stack_first;
         stack<int> stack_second;

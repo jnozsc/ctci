@@ -36,14 +36,14 @@ int main(int argc, const char* argv[]) {
     n3->next = n4;
     n4->next = n5;
     n5->next = n6;
-   // deleteDups(n1);
-    deleteNode (n3);
-    cout << n2->next->val <<endl; // 4
+    // deleteDups(n1);
+    deleteNode(n3);
+    cout << n2->next->val << endl; // 4
     return 0;
 }
 
 bool deleteNode(LinkedListNode* n) {
-    if(n== NULL || n->next == NULL) {
+    if (n == NULL || n->next == NULL) {
         return false; // error handle
     } else {
         n->val = n->next->val;

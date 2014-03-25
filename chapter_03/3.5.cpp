@@ -3,24 +3,24 @@
 class MyQueue {
     stack<int> stack_first;
     stack<int> stack_second;
-    
-public:
+
+  public:
     MyQueue() {
         stack<int> stack_first;
         stack<int> stack_second;
     }
-    
-     void clearQueue() {
+
+    void clearQueue() {
         while (!this->stack_first.empty()) {
             this->stack_first.pop();
         }
     }
-    
-     void push(int value) {
+
+    void push(int value) {
         this->stack_first.push(value);
     }
-    
-     void pop (){
+
+    void pop() {
         if (this->stack_first.empty()) return;
         while (!this->stack_first.empty()) {
             this->stack_second.push(this->stack_first.top());
@@ -32,17 +32,17 @@ public:
             this->stack_second.pop();
         }
     }
-    
-     bool empty() {
+
+    bool empty() {
         return this->stack_first.empty();
     }
-    
-     int back() {
+
+    int back() {
         if (this->stack_first.empty()) return -1;
         return this->stack_first.top();
     }
-    
-    int front (){
+
+    int front() {
         if (this->stack_first.empty()) return -1;
         while (!this->stack_first.empty()) {
             this->stack_second.push(this->stack_first.top());
